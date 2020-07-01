@@ -42,8 +42,7 @@ instAll <- function(x, repo=NULL) {
 }
 
 cls <- function(){
-  rm(list = ls())
-  cat("\014")
+    cat("\014")
 }
 
 ddiv <- function(x,y) {
