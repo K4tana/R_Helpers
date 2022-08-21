@@ -1,51 +1,13 @@
-instAll <- function(x, repo=NULL) {
-  `%notin%` <- Negate(`%in%`)
-  if("remotes" %notin% rownames(installed.packages()))
-    {
-    install.packages("remotes")
-    }
-    require(remotes)
-    if(x %in% rownames(installed.packages()))
-    {
-      cat("Package is already installed")
-    }
-    else
-    {
-      if(is.null(repo))
-      {
-        install.packages(x)
-        if(x %notin% rownames(installed.packages()))
-        {
-          warning("Package not found. Please specify source or use other functions from the remotes package!")
-          stop()
-        }
-      }
-      else
-        {
-          if(repo=="github")
-          {
-            install_github(x)
-          }
-          else
-            {
-              if(repo=="bitbucket")
-              {
-                install_bitbucket(x)
-              }
-              else
-              {
-                warning("Package not found. Please specify source or use other functions from the remotes package!")
-              }
-            }
-        }
-    }
-}
+#This is the base R I use.
+library(usethis)
 
-cls <- function(){
-    cat("\014")
-}
+#Function sources
+source("https://raw.githubusercontent.com/K4tana/R_Helpers/master/uniq_combinator.R")
+source("https://raw.githubusercontent.com/K4tana/R_Helpers/master/instAll.R")
+source("https://raw.githubusercontent.com/K4tana/R_Helpers/master/console_clear.R")
+source("https://raw.githubusercontent.com/K4tana/R_Helpers/master/percentage_change.R")
 
-ddiv <- function(x,y) {
-x-y/x
-}
+
+
+
 
