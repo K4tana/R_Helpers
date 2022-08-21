@@ -1,3 +1,5 @@
+#This function looks at a vector of elements and outputs all unique combinations of every vector element, similar to expand.grid, just without respecting ordering - every element combination is only represented once. Works downstream from vector start and is an extension for expand.grid, written in base R. 
+#
 uniq_combinator <- function(input=NULL){
   if(is.null(input)){
     stop("No function input specified.")
